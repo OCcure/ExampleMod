@@ -18,7 +18,6 @@ public class SuperJumpChargingGauge extends ChargingGauge{
 
     @Override
     protected boolean isCharging() {
-        ExampleMod.getLogger().info("isCharging: " + chargeController.getOnScreenGauge());
         return chargeController.getOnScreenGauge();
     }
 

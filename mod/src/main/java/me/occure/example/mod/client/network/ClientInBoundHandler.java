@@ -14,7 +14,6 @@ public class ClientInBoundHandler extends ChannelInboundHandlerAdapter {
 
     @Override
     public void channelActive(@NotNull ChannelHandlerContext ctx) throws Exception {
-        Logger.getLogger("Network").info("ChannelActive");
     }
     @Override
     public void channelInactive(ChannelHandlerContext ctx) throws Exception {
@@ -26,8 +25,8 @@ public class ClientInBoundHandler extends ChannelInboundHandlerAdapter {
             final int id = buf.readInt();
             if(id == 2 ){
                 ChargeEventClientBoundPacket eventPacket = new ChargeEventClientBoundPacket(buf);
-                ExampleMod.controller.setOnScreenGauge(eventPacket.isWearingCustomItem());
-
+                ExampleMod.controller.setOnScreenGauge(eventPacket.isChargingGauge());
+                ExampleMod.getLogger().info(eventPacket.toString());
             }
         }finally {
             ReferenceCountUtil.release(msg);

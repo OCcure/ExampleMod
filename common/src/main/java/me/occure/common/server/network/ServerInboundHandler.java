@@ -22,7 +22,6 @@ public class ServerInboundHandler extends ChannelInboundHandlerAdapter {
     @Override
     public void channelActive(@NotNull ChannelHandlerContext ctx) throws Exception {
         channels.put(ctx.channel().remoteAddress().toString(), ctx.channel());
-        Logger.getLogger("Network").info("ChannelActive" + channels);
     }
 
     @Override
@@ -37,12 +36,8 @@ public class ServerInboundHandler extends ChannelInboundHandlerAdapter {
             final int id = buf.readInt();
             if(id == 1){
                ChargeEventServerBoundPacket eventPacket = new ChargeEventServerBoundPacket(buf);
-               packetHandler.packetHandler(eventPacket);
-
-                ChargeEventClientBoundPacket packet =
-                        new ChargeEventClientBoundPacket(packetHandler.getBootsChecker().isWearingItem());
-                String remoteAddress = ctx.channel().remoteAddress().toString();
-                Server.sendPacket(remoteAddress, packet.toByteBuf());
+               packetHandler.packetHandler(eventPacket, ctx);
+               Logger.getLogger("Junp").info(eventPacket.toString());
             }
         }finally {
             ReferenceCountUtil.release(msg);

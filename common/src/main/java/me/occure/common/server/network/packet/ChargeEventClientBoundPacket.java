@@ -7,32 +7,32 @@ public class ChargeEventClientBoundPacket {
 
     private static final int ID = 2;
 
-    private final boolean wearingCustomItem;
+    private final boolean ChargingGauge;
 
-    public ChargeEventClientBoundPacket(boolean wearingCustomItem) {
-        this.wearingCustomItem = wearingCustomItem;
+    public ChargeEventClientBoundPacket(boolean ChargingGauge) {
+        this.ChargingGauge = ChargingGauge;
     }
 
     public ChargeEventClientBoundPacket(ByteBuf buf) {
-        wearingCustomItem =buf.readBoolean();
+        ChargingGauge =buf.readBoolean();
     }
 
     public ByteBuf toByteBuf(){
         ByteBuf buf = Unpooled.buffer();
 
         buf.writeInt(ID);
-        buf.writeBoolean(wearingCustomItem);
+        buf.writeBoolean(ChargingGauge);
         return buf;
     }
 
     @Override
     public String toString() {
         return "ChargeEventClientBoundPacket{" +
-                "wearingCustomItem=" + wearingCustomItem +
+                "wearingCustomItem=" + ChargingGauge +
                 '}';
     }
 
-    public boolean isWearingCustomItem() {
-        return wearingCustomItem;
+    public boolean isChargingGauge() {
+        return ChargingGauge;
     }
 }

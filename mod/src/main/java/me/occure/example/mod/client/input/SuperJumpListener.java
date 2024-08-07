@@ -1,11 +1,7 @@
 package me.occure.example.mod.client.input;
 
 import me.occure.example.mod.ExampleMod;
-import me.occure.example.mod.charge.ChargeController;
-import me.occure.example.mod.charge.SuperJumpChargeController;
-import me.occure.example.mod.client.screen.SuperJumpChargingGauge;
 import net.minecraft.client.Minecraft;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.player.Player;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.EventPriority;
@@ -35,13 +31,13 @@ public class SuperJumpListener {
         if(player == null){
             return;
         }
-            if(SuperJumpKeyMapping.KEY_SUPER_JUMP.get().consumeClick()){
+            if(SuperJumpKeyMapping.KEY_SUPER_JUMP.get().isDown()){
                 if(!ExampleMod.controller.isCharging()){
                     ExampleMod.controller.startCharging();
                 }else {
                     ExampleMod.controller.updateCharging();
                 }
-            }else {
+            }else if(SuperJumpKeyMapping.KEY_SUPER_JUMP.get().consumeClick()){
                 if(ExampleMod.controller.isCharging()) {
                     ExampleMod.controller.stopCharging();
                 }

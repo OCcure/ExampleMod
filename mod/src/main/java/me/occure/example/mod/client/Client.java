@@ -8,6 +8,7 @@ import io.netty.channel.ChannelOption;
 import io.netty.channel.EventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.nio.NioSocketChannel;
+import me.occure.example.mod.ExampleMod;
 import me.occure.example.mod.client.network.ClientInitializer;
 
 import java.util.logging.Logger;
@@ -37,9 +38,6 @@ public class Client {
 
             ChannelFuture f = b.connect(host, port).sync(); // (5)
             channel = f.channel();
-
-            Logger.getLogger("Network").info("Client Started");
-
 
         } finally {
 

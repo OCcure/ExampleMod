@@ -1,6 +1,6 @@
 name: ExamplePlugin
 version: '${version}'
-main: net.ledestudio.example.plugin.ExamplePlugin
+main: me.occure.example.plugin.ExamplePlugin
 description: An example plugin
 author: Lede
 website: https://ledestudio.net

@@ -23,6 +23,7 @@ subprojects {
 
     repositories {
         mavenCentral()
+        maven { url = "https://repo.papermc.io/repository/maven-public/" }
     }
 
     dependencies {
@@ -43,9 +44,11 @@ subprojects {
 
         // https://mvnrepository.com/artifact/io.netty/netty-all
         implementation("io.netty:netty-all:${netty_version}")
+        compileOnly("io.papermc.paper:paper-api:${paper_version}")
 
         testImplementation("org.junit.jupiter:junit-jupiter-api:${junit_version}")
         testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junit_version}")
+
     }
 
     test {

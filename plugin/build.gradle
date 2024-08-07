@@ -27,3 +27,8 @@ processResources {
         expand props
     }
 }
+jar {
+    archiveFileName = project.name + ".jar"
+    destinationDirectory.set(file("C:\\Project\\mod\\mdk-1.21\\plugin\\run\\plugins"))
+}
+

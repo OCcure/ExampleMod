@@ -6,8 +6,6 @@ import io.netty.channel.Channel;
 import io.netty.channel.ChannelHandlerContext;
 import io.netty.channel.ChannelInboundHandlerAdapter;
 import io.netty.util.ReferenceCountUtil;
-import me.occure.common.server.Server;
-import me.occure.common.server.network.packet.ChargeEventClientBoundPacket;
 import me.occure.common.server.network.packet.ChargeEventServerBoundPacket;
 import org.jetbrains.annotations.NotNull;
 

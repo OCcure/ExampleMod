@@ -8,8 +8,6 @@ import me.occure.example.mod.ExampleMod;
 import me.occure.example.mod.client.network.packet.ChargeEventClientBoundPacket;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.logging.Logger;
-
 public class ClientInBoundHandler extends ChannelInboundHandlerAdapter {
 
     @Override

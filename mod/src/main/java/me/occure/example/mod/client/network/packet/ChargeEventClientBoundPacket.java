@@ -28,7 +28,7 @@ public class ChargeEventClientBoundPacket {
     @Override
     public String toString() {
         return "ChargeEventClientBoundPacket{" +
-                "wearingCustomItem=" + ChargingGauge +
+                "ChargingGauge=" + ChargingGauge +
                 '}';
     }
 

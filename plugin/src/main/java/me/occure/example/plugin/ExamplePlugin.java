@@ -3,7 +3,6 @@ package me.occure.example.plugin;
 import me.occure.common.server.Server;
 import me.occure.example.plugin.command.command;
 import org.bukkit.Bukkit;
-import org.bukkit.command.defaults.BukkitCommand;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public class ExamplePlugin extends JavaPlugin {

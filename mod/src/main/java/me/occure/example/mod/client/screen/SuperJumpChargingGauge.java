@@ -1,6 +1,5 @@
 package me.occure.example.mod.client.screen;
 
-import me.occure.example.mod.ExampleMod;
 import me.occure.example.mod.charge.SuperJumpChargeController;
 import net.minecraft.resources.ResourceLocation;
 

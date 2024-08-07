@@ -2,7 +2,7 @@ package me.occure.example.mod;
 
 import me.occure.example.mod.charge.ChargeController;
 import me.occure.example.mod.charge.SuperJumpChargeController;
-import me.occure.example.mod.client.screen.ChargingGauge;
+
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
